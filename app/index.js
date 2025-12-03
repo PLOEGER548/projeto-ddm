@@ -1,30 +1,48 @@
-import { subscribe } from 'expo-router/build/link/linking';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
+import bg from "../assets/background.jpg";
 
-export default function App() {
+export default function Index() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Pagina Inicial</Text>
-      <Text style={styles.subtitle}>Bem Vindo ao Aplicativo!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ImageBackground source={bg} style={styles.background}>
+      <View style={styles.overlay}>
+        <Text style={styles.title}>🎾 Evolução do Tênis</Text>
+        <Text style={styles.subtitle}>
+          Um aplicativo informativo sobre a história do tênis, os calçados e as quadras.
+        </Text>
+      </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    resizeMode: 'cover',
     justifyContent: 'center',
   },
-  title: {
-    fontsize: 36,
+  overlay: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 30,
+    paddingVertical: 60,
+    backgroundColor: 'rgba(0,0,0,0.6)', // leve escurecimento com profundidade
   },
-  
+  title: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    color: '#fff',
+    marginBottom: 20,
+    textAlign: 'center',
+    textShadowColor: 'rgba(0,0,0,0.3)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 3,
+  },
   subtitle: {
     fontSize: 18,
-    color: '#888',
-  }
+    color: '#f0f0f0',
+    textAlign: 'center',
+    lineHeight: 24,
+    maxWidth: 320,
+  },
 });
