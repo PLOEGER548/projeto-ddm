@@ -11,6 +11,7 @@ export default function Pisantes() {
         source={bg}
         style={styles.image}
       />
+      
       <Text style={styles.text}>
         No início, os jogadores utilizavam sapatos de couro simples, sem amortecimento ou aderência.
         Com o avanço da tecnologia, surgiram tênis específicos para o esporte, oferecendo maior conforto e segurança.
